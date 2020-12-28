@@ -20,7 +20,7 @@ class TimeLineRepository {
           date: '2014-2017',
           name: 'Universidade Católica de Brasília',
           iconAsset: 'ucb.jpg',
-          subtitle: 'Sistema de Informação'),
+          subtitle: 'Graduação em Sistema de Informação'),
       TimeLine(
           date: '2016-2017',
           name: 'Mirante Tecnologia',
@@ -28,7 +28,7 @@ class TimeLineRepository {
           subtitle: 'Estágiario'),
       TimeLine(
           date: '2017-2019',
-          name: 'OpenSingular',
+          name: 'Singular',
           iconAsset: 'singular.png',
           subtitle: 'Engenheiro de Software'),
       TimeLine(
@@ -37,8 +37,18 @@ class TimeLineRepository {
           iconAsset: 'mirante.png',
           subtitle: 'Engenheiro de Software'),
       TimeLine(
+          date: '2020-2020',
+          name: 'Digital Innovation One',
+          iconAsset: 'digital_innovation_one.png',
+          subtitle: 'Instrutor de Flutter'),
+      TimeLine(
           date: '2020',
-          name: 'OpenSingular Studio',
+          name: 'Instituto de Gestão e Tecnologia da Informação',
+          iconAsset: 'igti.jpg',
+          subtitle: 'MBA em Desenvolvimento Mobile'),
+      TimeLine(
+          date: '2020',
+          name: 'Singular Studio',
           iconAsset: 'singular.png',
           subtitle: 'Engenheiro de Software'),
     ];

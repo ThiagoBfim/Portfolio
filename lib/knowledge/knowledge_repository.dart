@@ -53,5 +53,11 @@ class KnowledgeRepository {
       image: "angular.png",
       color: Colors.red[200],
     ),
+    Knowledge(
+      id: 8,
+      title: "SQL",
+      image: "sql.png",
+      color: Colors.purple[200],
+    ),
   ];
 }
