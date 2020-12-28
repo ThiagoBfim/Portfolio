@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_page/about/about_section.dart';
 import 'package:my_page/knowledge/knowledge_section.dart';
-import 'package:my_page/timeline/timeline.dart';
 import 'package:my_page/timeline/timeline_section.dart';
 
 void main() {
@@ -29,7 +29,8 @@ class HomePage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              ServiceSection(),
+              AboutSection(),
+              KnowledgeSection(),
               TimeLineSection(),
             ],
           ),

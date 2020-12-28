@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_page/knowledge/knowledge_repository.dart';
 import 'package:my_page/knowledge/knowledge_card.dart';
+import 'package:my_page/knowledge/knowledge_repository.dart';
 import 'package:my_page/shared/constans.dart';
 import 'package:my_page/shared/section_tile.dart';
 
-class ServiceSection extends StatelessWidget {
+class KnowledgeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
