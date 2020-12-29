@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_page/shared/constans.dart';
 
@@ -17,7 +16,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
-      constraints: BoxConstraints(maxWidth: 1110),
+      // constraints: BoxConstraints(maxWidth: 1110),
       height: 100,
       child: Row(
         children: [
@@ -33,6 +32,7 @@ class SectionTitle extends StatelessWidget {
               ),
             ),
           ),
+          Flexible(child:
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -40,17 +40,20 @@ class SectionTitle extends StatelessWidget {
               Text(
                 subTitle,
                 style:
-                TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
+                    TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
               ),
-              Text(
+               Text(
                 title,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                softWrap: false,
                 style: Theme.of(context)
                     .textTheme
-                    .headline2
+                    .headline3
                     .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
               )
             ],
-          )
+          ))
         ],
       ),
     );

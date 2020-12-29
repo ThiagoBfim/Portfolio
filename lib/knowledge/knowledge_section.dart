@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_page/knowledge/knowledge_card.dart';
 import 'package:my_page/knowledge/knowledge_repository.dart';
 import 'package:my_page/shared/constans.dart';
+import 'package:my_page/shared/screen_view.dart';
 import 'package:my_page/shared/section_tile.dart';
 
 class KnowledgeSection extends StatelessWidget {
@@ -17,14 +18,17 @@ class KnowledgeSection extends StatelessWidget {
             title: "Conhecimentos",
             subTitle: "Meus interesses",
           ),
-          Container(
-            height: 550,
-            child: GridView.builder(
-              itemBuilder: (_, index) => ServiceCard(index: index),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-              itemCount: KnowledgeRepository.conhecimentos.length,
-            ),
-          ),
+          Padding(
+              padding: const EdgeInsets.only(right: kDefaultPadding),
+              child: Container(
+                height: isMobileView(context) ? 250 : 550,
+                child: GridView.builder(
+                  itemBuilder: (_, index) => ServiceCard(index: index),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: isMobileView(context) ? 2 : 4),
+                  itemCount: KnowledgeRepository.conhecimentos.length,
+                ),
+              )),
         ],
       ),
     );

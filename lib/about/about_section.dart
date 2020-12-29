@@ -83,26 +83,28 @@ class AboutSection extends StatelessWidget {
   }
 
   _redeSociais(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: List.generate(
-          SocialNetworkRepository.getSocialNetworks().length,
-          (index) {
-            var social = SocialNetworkRepository.getSocialNetworks()[index];
-            return InkWell(
-              borderRadius: BorderRadius.circular(100.0),
-              onTap: () => _launchURL(social.url),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  'about/${social.iconAsset}',
-                  height: 100,
-                  width: 100,
-                ),
-              ),
-            );
-          },
-        ));
+    return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: List.generate(
+              SocialNetworkRepository.getSocialNetworks().length,
+              (index) {
+                var social = SocialNetworkRepository.getSocialNetworks()[index];
+                return InkWell(
+                  borderRadius: BorderRadius.circular(100.0),
+                  onTap: () => _launchURL(social.url),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/about/${social.iconAsset}',
+                      height: 100,
+                      width: 100,
+                    ),
+                  ),
+                );
+              },
+            )));
   }
 
   _launchURL(String url) async {
@@ -116,14 +118,15 @@ class AboutSection extends StatelessWidget {
   _curriculo(BuildContext context) {
     return InkWell(
       hoverColor: Colors.transparent,
-      onTap: () => _launchURL('https://thiagobfim.github.io/MyPage/assets/certificados/Meu_Curriculo.pdf'),
+      onTap: () => _launchURL(
+          'https://thiagobfim.github.io/MyPage/assets/certificados/Meu_Curriculo.pdf'),
       child: Container(
         width: 200,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
-              image: AssetImage('about/favicon.png'),
+              image: AssetImage('assets/about/favicon.png'),
               height: 80,
               width: 80,
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/shared/constans.dart';
+import 'package:my_page/shared/screen_view.dart';
 
 import 'knowledge_repository.dart';
 
@@ -44,7 +45,8 @@ class _ServiceCardState extends State<ServiceCard> {
               offset: Offset(0, 20),
               blurRadius: 50,
               color: conhecimento.color.withOpacity(0.5),
-            )],
+            )
+            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +55,7 @@ class _ServiceCardState extends State<ServiceCard> {
               SizedBox(height: kDefaultPadding),
               Text(
                 conhecimento.title,
-                style: TextStyle(fontSize: 22),
+                style: TextStyle(fontSize: isMobileView(context) ? 18 : 22),
               ),
             ],
           ),
@@ -65,9 +67,9 @@ class _ServiceCardState extends State<ServiceCard> {
   AnimatedContainer _icon(Knowledge conhecimento) {
     return AnimatedContainer(
       duration: duration,
-      padding: EdgeInsets.all(kDefaultPadding * 1.5),
-      height: 120,
-      width: 120,
+      padding: EdgeInsets.all(kDefaultPadding),
+      height: isMobileView(context) ? 80 : 120,
+      width: isMobileView(context) ? 80 :  120,
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
@@ -81,7 +83,7 @@ class _ServiceCardState extends State<ServiceCard> {
         ],
       ),
       child: Image.asset(
-        'conhecimentos/${conhecimento.image}',
+        'assets/conhecimentos/${conhecimento.image}',
         fit: BoxFit.fill,
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:my_page/shared/constans.dart';
+import 'package:my_page/shared/screen_view.dart';
 import 'package:my_page/timeline/time_line_repository.dart';
 import 'package:timelines/timelines.dart';
 
@@ -18,7 +19,7 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 8),
+      duration: const Duration(seconds: 10),
       vsync: this,
     )..repeat();
 
@@ -27,8 +28,15 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
         TweenSequenceItem(
           weight: 1.0,
           tween: ColorTween(
-            begin: Colors.white10.withOpacity(0.2),
-            end: Colors.black12.withOpacity(0.1),
+            begin: Colors.green[200].withOpacity(0.6),
+            end: Colors.green[300].withOpacity(0.6),
+          ),
+        ),
+        TweenSequenceItem(
+          weight: 1.0,
+          tween: ColorTween(
+            begin: Colors.green[300].withOpacity(0.6),
+            end: Colors.green[200].withOpacity(0.6),
           ),
         ),
       ],
@@ -43,7 +51,7 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
         theme: TimelineThemeData(
           direction: Axis.vertical,
           connectorTheme: ConnectorThemeData(
-            space: 30.0,
+            space: 40.0,
             thickness: 5.0,
           ),
         ),
@@ -72,8 +80,8 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
       decoration: new BoxDecoration(
           shape: BoxShape.circle, boxShadow: [kDefaultStrongShadow]),
       child: CircleAvatar(
-        backgroundImage: AssetImage('timeline/${timeline.iconAsset}'),
-        maxRadius: 50.0,
+        backgroundImage: AssetImage('assets/timeline/${timeline.iconAsset}'),
+        maxRadius: isMobileView(context) ? 25 : 50.0,
       ),
     );
   }
@@ -90,7 +98,7 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
               color: timeline.atividadesDesenvolvidas != null
                   ? background
                       .evaluate(AlwaysStoppedAnimation(_controller.value))
-                  : Colors.white10.withOpacity(0.2),
+                  : Colors.white.withOpacity(0.2),
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -99,16 +107,21 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
                       Text(
                         timeline.date,
                         style: TextStyle(
-                            fontStyle: FontStyle.italic, fontSize: 20.0),
+                            fontStyle: FontStyle.italic,
+                            fontSize: isMobileView(context) ? 14 : 20.0),
                       ),
                       Text(
                         timeline.name,
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headline5,
+                        style: isMobileView(context)
+                            ? Theme.of(context).textTheme.subtitle1
+                            : Theme.of(context).textTheme.headline5,
                       ),
                       Text(
                         timeline.subtitle,
-                        style: Theme.of(context).textTheme.headline6,
+                        style: isMobileView(context)
+                            ? Theme.of(context).textTheme.subtitle2
+                            : Theme.of(context).textTheme.headline6,
                       ),
                     ],
                   ),
@@ -140,7 +153,8 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
   }
 
   contentBox(TimeLine timeline, BuildContext context) {
-    return Stack(
+    return SingleChildScrollView(
+        child: Stack(
       children: <Widget>[
         Container(
           width: 800,
@@ -184,17 +198,20 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
         Positioned(
             left: 10,
             right: 10,
-            child: CircleAvatar(
-              maxRadius: 50.0,
-              backgroundColor: Colors.transparent,
-              child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(60)),
-                  child: Image.asset(
-                    'timeline/${timeline.iconAsset}',
-                  )),
-            )),
+            child: Container(
+                decoration: new BoxDecoration(
+                    shape: BoxShape.circle, boxShadow: [kDefaultStrongShadow]),
+                child: CircleAvatar(
+                  maxRadius: 50.0,
+                  backgroundColor: Colors.transparent,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(60)),
+                      child: Image.asset(
+                        'assets/timeline/${timeline.iconAsset}',
+                      )),
+                ))),
       ],
-    );
+    ));
   }
 
   Padding _infoDetailAtividade(String detailAtividade) {

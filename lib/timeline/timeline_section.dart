@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_page/knowledge/knowledge_repository.dart';
-import 'package:my_page/knowledge/knowledge_card.dart';
 import 'package:my_page/shared/constans.dart';
+import 'package:my_page/shared/screen_view.dart';
 import 'package:my_page/shared/section_tile.dart';
 import 'package:my_page/timeline/timeline.dart';
 
@@ -18,7 +17,7 @@ class TimeLineSection extends StatelessWidget {
             title: "Linha do Tempo",
             subTitle: "Minha trajetória",
           ),
-          Container(height: 800, child: TimeLineWidget()),
+          Container(height: isMobileView(context) ? 300 : 800, child: TimeLineWidget()),
         ],
       ),
     );
