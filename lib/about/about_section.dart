@@ -119,7 +119,7 @@ class AboutSection extends StatelessWidget {
     return InkWell(
       hoverColor: Colors.transparent,
       onTap: () => _launchURL(
-          'https://thiagobfim.github.io/MyPage/assets/certificados/Meu_Curriculo.pdf'),
+          'https://thiagobfim.github.io/Portfolio/assets/assets/Thiago_Curriculo.pdf'),
       child: Container(
         width: 200,
         child: Row(
