@@ -17,7 +17,7 @@ class TimeLineSection extends StatelessWidget {
             title: "Linha do Tempo",
             subTitle: "Minha trajetória",
           ),
-          Container(height: isMobileView(context) ? 300 : 800, child: TimeLineWidget()),
+          Container(height: isMobileView(context) ? 300 : 1200, child: TimeLineWidget()),
         ],
       ),
     );

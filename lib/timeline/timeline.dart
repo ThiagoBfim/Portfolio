@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:my_page/shared/constans.dart';
@@ -162,9 +163,20 @@ class _TimeLineWidgetState extends State<TimeLineWidget>
           margin: EdgeInsets.only(top: 75.0),
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [kDefaultStrongShadow]),
+              color: AdaptiveTheme.of(context).mode.isDark
+                  ? Colors.black.withOpacity(0.85)
+                  : Colors.white.withOpacity(0.85),
+              borderRadius: BorderRadius.circular(20.0),
+              boxShadow: [
+                BoxShadow(
+                  color: AdaptiveTheme.of(context).mode.isDark
+                      ? Colors.black45
+                      : Colors.white54,
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: Offset(0, 1), // changes position of shadow
+                )
+              ]),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
