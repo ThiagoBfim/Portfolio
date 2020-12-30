@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_page/shared/constans.dart';
 import 'package:my_page/shared/screen_view.dart';
 import 'package:my_page/shared/section_tile.dart';
-import 'package:my_page/timeline/timeline.dart';
+import 'package:my_page/timeline/timeline_widget.dart';
 
 class TimeLineSection extends StatelessWidget {
   @override
