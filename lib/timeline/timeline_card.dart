@@ -25,7 +25,7 @@ class _TimeLineCardState extends State<TimeLineCard>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 8),
       vsync: this,
     )..repeat();
 
