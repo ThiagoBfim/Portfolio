@@ -59,5 +59,11 @@ class KnowledgeRepository {
       image: "sql.png",
       color: Colors.purple[200],
     ),
+    Knowledge(
+      id: 9,
+      title: "Docker",
+      image: "docker.png",
+      color: Colors.yellow[200],
+    ),
   ];
 }

@@ -21,7 +21,7 @@ class KnowledgeSection extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(right: kDefaultPadding),
               child: Container(
-                height: isMobileView(context) ? 250 : 550,
+                height: isMobileView(context) ? 250 : 600,
                 child: GridView.builder(
                   itemBuilder: (_, index) => ServiceCard(index: index),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
