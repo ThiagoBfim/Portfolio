@@ -8,7 +8,7 @@ jobs:
     name: Build Web
     env:
       my_secret: ${{secrets.commit_secret}}
-      teste: ${{commit_secret}}
+      teste: teste
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
