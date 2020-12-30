@@ -13,7 +13,7 @@ class TimeLineWidget extends StatelessWidget {
       child: Timeline.tileBuilder(
           theme: TimelineThemeData(
               direction: Axis.vertical,
-              connectorTheme: ConnectorThemeData(space: 40.0, thickness: 5.0)),
+              connectorTheme: ConnectorThemeData(space: 45.0, thickness: 5.0)),
           builder: TimelineTileBuilder.connected(
               connectorBuilder: (_, index, type) => Connector.solidLine(),
               connectionDirection: ConnectionDirection.before,
