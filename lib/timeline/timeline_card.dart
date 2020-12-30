@@ -35,13 +35,13 @@ class _TimeLineCardState extends State<TimeLineCard>
           weight: 1.0,
           tween: ColorTween(
             begin: Colors.green[200].withOpacity(0.6),
-            end: Colors.green[300].withOpacity(0.6),
+            end: Colors.green[300].withOpacity(0.9),
           ),
         ),
         TweenSequenceItem(
           weight: 1.0,
           tween: ColorTween(
-            begin: Colors.green[300].withOpacity(0.6),
+            begin: Colors.green[300].withOpacity(0.9),
             end: Colors.green[200].withOpacity(0.6),
           ),
         ),
@@ -62,11 +62,9 @@ class _TimeLineCardState extends State<TimeLineCard>
         animation: _controller,
         builder: (context, child) {
           return InkWell(
-            onTap: timeline.atividadesDesenvolvidas != null
-                ? _showDialog(timeline)
-                : null,
+            onTap: timeline.isNotStudy() ? _showDialog(timeline) : null,
             child: Card(
-              color: timeline.atividadesDesenvolvidas != null
+              color: timeline.isNotStudy()
                   ? background
                       .evaluate(AlwaysStoppedAnimation(_controller.value))
                   : Colors.white.withOpacity(0.2),

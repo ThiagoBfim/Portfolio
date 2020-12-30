@@ -17,6 +17,9 @@ class TimeLine {
       this.tecnologias,
       this.feitosDestaque,
       @required this.subtitle});
+
+  isStudy() => tecnologias == null;
+  isNotStudy() => !isStudy();
 }
 
 class TimeLineRepository {

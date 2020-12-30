@@ -12,6 +12,13 @@ final kDefaultStrongShadow = BoxShadow(
   offset: Offset(0, 3), // changes position of shadow
 );
 
+final kDefaultShadow = BoxShadow(
+  color: Colors.grey.withOpacity(0.3),
+  spreadRadius: 1,
+  blurRadius: 2,
+  offset: Offset(0, 2.5), // changes position of shadow
+);
+
 // TextField dedign
 final kDefaultInputDecorationTheme = InputDecorationTheme(
   border: kDefaultOutlineInputBorder,
