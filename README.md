@@ -1,16 +1,21 @@
-# my_page
+# My Portfolio
 
-Projeto contendo meu portifolio
+This project contains information about my professional experience. 
+
+There is information about technologies and tools that I am used to.
+
+There is a timeline with my experiences and some notes about each experience.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project use Flutter for Web application.
 
-A few resources to get you started if this is your first Flutter project:
+I use Github Page to publish my website, you can look it here: [My Portfolio](https://thiagobfim.github.io/Portfolio/#/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+I use Github Actions to push the website with every push.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## References
+
+If you wanna to know more about it, read it: [Building a web application with Flutter](https://docs.flutter.dev/get-started/web)
+
+If you wanna to know more about github action, read it [Flutter Web — Github Actions-Github Pages](https://medium.com/flutter-community/flutter-web-github-actions-github-pages-dec8f308542a)
