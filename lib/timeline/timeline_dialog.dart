@@ -92,7 +92,7 @@ class TimeLineDialog extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Align(
           alignment: Alignment.bottomRight,
-          child: FlatButton(
+          child: TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
                 'fechar',

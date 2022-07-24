@@ -74,12 +74,12 @@ Um módulo introdutório.
 Um módulo contendo integração com API Rest.
 Um módulo ensinando a realizar uma aplicação do zero à produção.'''),
       TimeLine(
-          date: '2020',
+          date: '2020-2021',
           name: 'Instituto de Gestão e Tecnologia da Informação',
           iconAsset: 'igti.jpg',
           subtitle: 'MBA em Desenvolvimento Mobile'),
       TimeLine(
-          date: '2020',
+          date: '2020-2021',
           name: 'Singular Studio',
           iconAsset: 'singular.png',
           subtitle: 'Engenheiro de Software',
@@ -89,6 +89,21 @@ Inclusão do Flyway para o gerenciamento de scripts.''',
           tecnologias: 'Java 8, Hibernate, Wicket, Spring, Git e PostgreSQL.',
           atividadesDesenvolvidas:
               '''Criação, implementação, manutenção e implantação de uma plataforma no code.'''),
+      TimeLine(
+          date: '2021',
+          name: 'Aubay',
+          iconAsset: 'aubay.png',
+          subtitle: 'Engenheiro de Software',
+          feitosDestaque: '''Melhoria na pipeline e apoio na automatização CI/CD. 
+Evoluções no código da aplicação diminuindo em 30% o tempo de build da aplicação.
+Inclusão do Sonar e apoio na criação de evolução dos testes unitários.''',
+          tecnologias: 'Java 8/11, Spring Boot, SQL, SOAP, Jenkins, Git, Docker, Kubernetes, Helm, OpenShift',
+          atividadesDesenvolvidas:
+          '''• Responsável pela gestão e definição do pipeline de CI/CD;
+• Responsável pelo Ambiente Cloud;
+• Treinar equipes com melhores práticas e qualidade de código;
+• Crie componentes e código de design para melhorar o trabalho em equipe;
+• Criação de microserviços para integração com sistemas internos.'''),
     ];
   }
 }
