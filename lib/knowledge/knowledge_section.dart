@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/knowledge/knowledge_card.dart';
 import 'package:my_page/knowledge/knowledge_repository.dart';
@@ -15,8 +16,8 @@ class KnowledgeSection extends StatelessWidget {
         children: [
           SectionTitle(
             color: Colors.red,
-            title: "Conhecimentos",
-            subTitle: "Meus interesses",
+            title: "knowledge".tr(),
+            subTitle: "my_interests".tr(),
           ),
           Padding(
               padding: const EdgeInsets.only(right: kDefaultPadding),

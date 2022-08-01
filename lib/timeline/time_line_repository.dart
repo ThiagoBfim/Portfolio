@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TimeLine {
@@ -19,6 +20,7 @@ class TimeLine {
       @required this.subtitle});
 
   isStudy() => tecnologias == null;
+
   isNotStudy() => !isStudy();
 }
 
@@ -27,83 +29,60 @@ class TimeLineRepository {
     return [
       TimeLine(
           date: '2014-2017',
-          name: 'Universidade Católica de Brasília',
+          name: 'ucb_name'.tr(),
           iconAsset: 'ucb.jpg',
-          subtitle: 'Graduação em Sistema de Informação'),
+          subtitle: 'ucb_course'.tr()),
       TimeLine(
           date: '2016-2017',
           name: 'Mirante Tecnologia',
           iconAsset: 'mirante.png',
-          subtitle: 'Estágiario',
-          feitosDestaque: '''Integração com VOIP(Callbox) via API REST.
-Inclusão do Flyway para o gerenciamento de scripts.''',
-          tecnologias:
-              'Java 8, Spring, Wicket, HTML, CSS, JS, JasperReport, Git e SQL Server.',
-          atividadesDesenvolvidas:
-              '''Criação e manutenção de um sistema para gerenciamento de hotéis, contratos, e área
-de atendimento para o contratante do serviço prestado pela Montreal Turismo.'''),
+          subtitle: 'mirante_job_1_position'.tr(),
+          feitosDestaque: 'mirante_job_1_emphasis'.tr(),
+          tecnologias: 'mirante_job_1_technologies'.tr(),
+          atividadesDesenvolvidas: 'mirante_job_1_tasks'.tr()),
       TimeLine(
           date: '2017-2019',
           name: 'Singular',
           iconAsset: 'singular.png',
-          subtitle: 'Engenheiro de Software',
-          tecnologias: 'Java 8, Hibernate, Wicket, Spring e Git.',
-          atividadesDesenvolvidas:
-              '''Desenvolvimento de componentes e manutenção na arquitetura para uma plataforma
-open source.'''),
+          subtitle: 'singular_job_1_position'.tr(),
+          tecnologias: 'singular_job_1_technologies'.tr(),
+          atividadesDesenvolvidas: 'singular_job_1_tasks'.tr()),
       TimeLine(
           date: '2019-2020',
           name: 'Mirante Tecnologia',
           iconAsset: 'mirante.png',
-          subtitle: 'Engenheiro de Software',
-          tecnologias: 'Flutter, Java 8, Java 11, Angular, Angular JS, JSF, Hibernate, Wicket, Spring, Jenkins, Gitlab CI/CD, OracleSQL e SQLServer. ',
-          feitosDestaque: '''Realização de integração com API REST para realização de pagamentos com PagTesouro.
-Evolução e manutenção de um dos principais sistemas da Anvisa.''',
-          atividadesDesenvolvidas:
-              '''Análise e desenvolvimento de sistemas para a Anvisa, que proporcionou uma economia de mais de 32 milhões em um ano.
-Análise e desenvolvimento de um aplicativo Mobile para o Incra e de uma API REST para comunicação.'''),
+          subtitle: 'mirante_job_2_position'.tr(),
+          feitosDestaque: 'mirante_job_2_emphasis'.tr(),
+          tecnologias: 'mirante_job_2_technologies'.tr(),
+          atividadesDesenvolvidas: 'mirante_job_2_tasks'.tr()),
       TimeLine(
           date: '2020-2020',
           name: 'Digital Innovation One',
           iconAsset: 'digital_innovation_one.png',
-          subtitle: 'Instrutor de Flutter',
-          tecnologias: 'Flutter, Gitlab CI. ',
-          atividadesDesenvolvidas:
-              '''Criação de 3 módulos ensinando Flutter.
-Um módulo introdutório.
-Um módulo contendo integração com API Rest.
-Um módulo ensinando a realizar uma aplicação do zero à produção.'''),
+          subtitle: 'dio_job_1_position'.tr(),
+          tecnologias: 'dio_job_1_technologies'.tr(),
+          atividadesDesenvolvidas: 'dio_job_1_tasks'.tr()),
       TimeLine(
           date: '2020-2021',
-          name: 'Instituto de Gestão e Tecnologia da Informação',
+          name: 'igti_name'.tr(),
           iconAsset: 'igti.jpg',
-          subtitle: 'MBA em Desenvolvimento Mobile'),
+          subtitle: 'igti_course'.tr()),
       TimeLine(
           date: '2020-2021',
           name: 'Singular Studio',
           iconAsset: 'singular.png',
-          subtitle: 'Engenheiro de Software',
-          feitosDestaque: '''Integração de uma ferramente para assinatura digital.
-Integração de login com o GOV.BR via OAUTH2.
-Inclusão do Flyway para o gerenciamento de scripts.''',
-          tecnologias: 'Java 8, Hibernate, Wicket, Spring, Git e PostgreSQL.',
-          atividadesDesenvolvidas:
-              '''Criação, implementação, manutenção e implantação de uma plataforma no code.'''),
+          subtitle: 'singular_job_2_position'.tr(),
+          feitosDestaque: 'singular_job_2_emphasis'.tr(),
+          tecnologias: 'singular_job_2_technologies'.tr(),
+          atividadesDesenvolvidas: 'singular_job_2_tasks'.tr()),
       TimeLine(
           date: '2021',
           name: 'Aubay',
           iconAsset: 'aubay.png',
-          subtitle: 'Engenheiro de Software',
-          feitosDestaque: '''Melhoria na pipeline e apoio na automatização CI/CD. 
-Evoluções no código da aplicação diminuindo em 30% o tempo de build da aplicação.
-Inclusão do Sonar e apoio na criação de evolução dos testes unitários.''',
-          tecnologias: 'Java 8/11, Spring Boot, SQL, SOAP, Jenkins, Git, Docker, Kubernetes, Helm, OpenShift',
-          atividadesDesenvolvidas:
-          '''• Responsável pela gestão e definição do pipeline de CI/CD;
-• Responsável pelo Ambiente Cloud;
-• Treinar equipes com melhores práticas e qualidade de código;
-• Crie componentes e código de design para melhorar o trabalho em equipe;
-• Criação de microserviços para integração com sistemas internos.'''),
+          subtitle: 'aubay_job_1_position'.tr(),
+          feitosDestaque: 'aubay_job_1_emphasis'.tr(),
+          tecnologias: 'aubay_job_1_technologies'.tr(),
+          atividadesDesenvolvidas: 'aubay_job_1_tasks'.tr()),
     ];
   }
 }

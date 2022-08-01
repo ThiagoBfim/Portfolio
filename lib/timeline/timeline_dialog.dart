@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/shared/constans.dart';
 import 'package:my_page/timeline/time_line_repository.dart';
@@ -34,15 +35,15 @@ class TimeLineDialog extends StatelessWidget {
             children: <Widget>[
               Text(timeline.name, style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 15),
-              _infoAtividade('Atividades Desenvolvidas:', context),
+              _infoAtividade('activities'.tr(), context),
               _infoDetailAtividade(timeline.atividadesDesenvolvidas, context),
               SizedBox(height: 10),
-              _infoAtividade('Tecnologias:', context),
+              _infoAtividade('technologies'.tr(), context),
               _infoDetailAtividade(timeline.tecnologias, context),
               SizedBox(height: 10),
               Visibility(
                   visible: timeline.feitosDestaque != null,
-                  child: _infoAtividade('Feitos de destaque:', context)),
+                  child: _infoAtividade('emphasis'.tr(), context)),
               _infoDetailAtividade(timeline.feitosDestaque, context),
               SizedBox(height: 10),
               _buildCloseButton(context),
@@ -95,7 +96,7 @@ class TimeLineDialog extends StatelessWidget {
           child: TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                'fechar',
+                'close'.tr(),
                 style: TextStyle(fontSize: 18, color: Colors.blue),
               )),
         ));

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/about/social_network_repository.dart';
 import 'package:my_page/shared/constans.dart';
@@ -14,8 +15,8 @@ class AboutSection extends StatelessWidget {
         children: [
           SectionTitle(
             color: Colors.green,
-            title: "Sobre",
-            subTitle: "Sobre mim",
+            title: "about".tr(),
+            subTitle: "about_me".tr(),
           ),
           Column(
             children: [
@@ -38,22 +39,13 @@ class AboutSection extends StatelessWidget {
             text: TextSpan(
                 style: Theme.of(context).textTheme.headline6,
                 children: <TextSpan>[
+                  TextSpan(text: 'about_me_sentence_1'.tr()),
+                  TextSpan(text: 'about_me_sentence_2'.tr()),
+                  TextSpan(text: 'about_me_sentence_3'.tr()),
                   TextSpan(
-                      text:
-                          'Me chamo Thiago Santos do Bomfim, e sou um engenheiro de software.\n'),
-                  TextSpan(
-                      text:
-                          'Eu sou muito apaixonado pelo potencial que a tecnologia tem de mudar a vida das pessoas.\n'),
-                  TextSpan(
-                      text:
-                          'Isso me motiva a estar estudando cada vez mais, pois compartilho do pensamento'),
-                  TextSpan(
-                      text:
-                          ' "Para quem só sabe usar martelo, todo problema é prego"',
+                      text: 'about_me_sentence_4'.tr(),
                       style: TextStyle(fontStyle: FontStyle.italic)),
-                  TextSpan(
-                      text:
-                          ', então estou sempre estudando e aprendendo as melhores praticas e melhores maneiras de resolver determinado problema.'),
+                  TextSpan(text: 'about_me_sentence_5'.tr()),
                 ]),
           ),
         ));
@@ -67,15 +59,10 @@ class AboutSection extends StatelessWidget {
             text: TextSpan(
                 style: Theme.of(context).textTheme.headline6,
                 children: <TextSpan>[
+                  TextSpan(text: 'about_me_it_sentence_1'.tr()),
+                  TextSpan(text: 'about_me_it_sentence_2'.tr()),
                   TextSpan(
-                      text:
-                          'Sou adepto ao manifesto agil e as boas práticas.\n'),
-                  TextSpan(
-                      text:
-                          'Penso que o código precisa ser simples e que consiga agregar valor para determinada pessoa. '
-                          'Tento sempre fazer código limpo, seguindo os princípios do SOLID e também compartilho do pensamento '),
-                  TextSpan(
-                      text: '"Código legado é aquele sem testes."',
+                      text: 'about_me_it_sentence_3'.tr(),
                       style: TextStyle(fontStyle: FontStyle.italic)),
                 ]),
           ),

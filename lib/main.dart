@@ -4,9 +4,20 @@ import 'package:my_page/about/about_section.dart';
 import 'package:my_page/knowledge/knowledge_section.dart';
 import 'package:my_page/timeline/timeline_section.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 void main() async {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en', 'US'), Locale('pt', 'BR')],
+        path: 'assets/translations',
+        // <-- change the path of the translation files
+        fallbackLocale: Locale('pt', 'BR'),
+        child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -37,7 +48,10 @@ class MyApp extends StatelessWidget {
         ),
         initial: initialTheme,
         builder: (theme, darkTheme) => MaterialApp(
-              title: 'Meu Portfólio',
+              localizationsDelegates: context.localizationDelegates,
+              supportedLocales: context.supportedLocales,
+              locale: context.locale,
+              title: 'title'.tr(),
               theme: theme,
               darkTheme: darkTheme,
               home: HomePage(),
