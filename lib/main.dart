@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.green,
         ),
         initial: initialTheme,
-        builder: (theme, darkTheme) => MaterialApp(
+        builder: (theme, darkTheme) =>
+            MaterialApp(
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               locale: context.locale,
@@ -71,19 +72,26 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AdaptiveTheme.of(context).mode.isDark
+        backgroundColor: AdaptiveTheme
+            .of(context)
+            .mode
+            .isDark
             ? Colors.blue.shade200
             : Colors.black87,
-        child: AdaptiveTheme.of(context).mode.isDark
+        child: AdaptiveTheme
+            .of(context)
+            .mode
+            .isDark
             ? Icon(
-                Icons.wb_sunny_sharp,
-                color: Colors.yellow,
-              )
+          Icons.wb_sunny_sharp,
+          color: Colors.yellow,
+        )
             : Icon(
-                Icons.nights_stay,
-                color: Colors.yellow,
-              ),
-        onPressed: () => {
+          Icons.nights_stay,
+          color: Colors.yellow,
+        ),
+        onPressed: () =>
+        {
           AdaptiveTheme.of(context).toggleThemeMode(),
           persistTheme(context)
         },
@@ -119,18 +127,22 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  GestureDetector createTranslationButton(BuildContext context, Locale locale) {
-    return GestureDetector(
-      onTap: () async {
-        await context.setLocale(locale);
-        setState(() {});
-      },
-      child: Image(
-        image: AssetImage("assets/translations/${locale.countryCode}.png"),
-        width: 60,
-        height: 60,
-      ),
-    );
+  Widget createTranslationButton(BuildContext context, Locale locale) {
+    return
+      MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () async {
+            await context.setLocale(locale);
+            setState(() {});
+          },
+          child: Image(
+            image: AssetImage("assets/translations/${locale.countryCode}.png"),
+            width: 60,
+            height: 60,
+          ),
+        ),
+      );
   }
 
   persistTheme(BuildContext context) async {
