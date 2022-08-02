@@ -118,7 +118,7 @@ class AboutSection extends StatelessWidget {
               width: 80,
             ),
             Text(
-              'Currículo',
+              'CV',
               style: TextStyle(color: Colors.blue, fontSize: 25),
             )
           ],
