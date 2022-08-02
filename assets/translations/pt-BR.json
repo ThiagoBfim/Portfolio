@@ -23,7 +23,7 @@
   "mirante_job_1_position": "Estágiario",
   "mirante_job_1_emphasis": "Integração com VOIP(Callbox) via API REST.\nInclusão do Flyway para o gerenciamento de scripts.",
   "mirante_job_1_technologies": "Java 8, Spring, Wicket, HTML, CSS, JS, JasperReport, Git e SQL Server.",
-  "mirante_job_1_tasks": "Criação e manutenção de um sistema para gerenciamento de hotéis, contratos, e área\nde atendimento para o contratante do serviço prestado pela Montreal Turismo.",
+  "mirante_job_1_tasks": "Criação e manutenção de um sistema para gerenciamento de hotéis, contratos, e área de atendimento para o contratante do serviço prestado pela Montreal Turismo.",
   "singular_job_1_position": "Engenheiro de Software",
   "singular_job_1_technologies": "Java 8, Hibernate, Wicket, Spring e Git.",
   "singular_job_1_tasks": "Desenvolvimento de componentes e manutenção na arquitetura para uma plataforma\nopen source.",
