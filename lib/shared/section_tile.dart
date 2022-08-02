@@ -40,7 +40,7 @@ class SectionTitle extends StatelessWidget {
               Text(
                 subTitle,
                 style:
-                    TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
+                    TextStyle(fontWeight: FontWeight.w200, color: Theme.of(context).brightness == Brightness.light ? kTextLightColor: kTextColor),
               ),
                Text(
                 title,
@@ -50,7 +50,7 @@ class SectionTitle extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline3
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                    .copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).brightness == Brightness.light ? kTextBoldLightColor: kTextBoldColor),
               )
             ],
           ))
