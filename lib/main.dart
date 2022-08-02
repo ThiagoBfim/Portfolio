@@ -1,10 +1,10 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/about/about_section.dart';
 import 'package:my_page/knowledge/knowledge_section.dart';
 import 'package:my_page/timeline/timeline_section.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               locale: context.locale,
-              title: 'title'.tr(),
+              title: 'ThiagoBfim',
               theme: theme,
               darkTheme: darkTheme,
               home: HomePage(),
@@ -59,7 +59,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({Key key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,16 +88,47 @@ class HomePage extends StatelessWidget {
           persistTheme(context)
         },
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              AboutSection(),
-              KnowledgeSection(),
-              TimeLineSection(),
-            ],
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                createTranslationButton(context, Locale('pt', 'BR')),
+                createTranslationButton(context, Locale('en', 'US')),
+              ],
+            ),
           ),
-        ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  children: [
+                    AboutSection(),
+                    KnowledgeSection(),
+                    TimeLineSection(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  GestureDetector createTranslationButton(BuildContext context, Locale locale) {
+    return GestureDetector(
+      onTap: () async {
+        await context.setLocale(locale);
+        setState(() {});
+      },
+      child: Image(
+        image: AssetImage("assets/translations/${locale.countryCode}.png"),
+        width: 60,
+        height: 60,
       ),
     );
   }
