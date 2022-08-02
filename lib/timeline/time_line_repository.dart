@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TimeLine {
@@ -29,60 +28,60 @@ class TimeLineRepository {
     return [
       TimeLine(
           date: '2014-2017',
-          name: 'ucb_name'.tr(),
+          name: 'Universidade Católica de Brasília',
           iconAsset: 'ucb.jpg',
-          subtitle: 'ucb_course'.tr()),
+          subtitle: 'ucb_course'),
       TimeLine(
           date: '2016-2017',
           name: 'Mirante Tecnologia',
           iconAsset: 'mirante.png',
-          subtitle: 'mirante_job_1_position'.tr(),
-          feitosDestaque: 'mirante_job_1_emphasis'.tr(),
-          tecnologias: 'mirante_job_1_technologies'.tr(),
-          atividadesDesenvolvidas: 'mirante_job_1_tasks'.tr()),
+          subtitle: 'mirante_job_1_position',
+          feitosDestaque: 'mirante_job_1_emphasis',
+          tecnologias: 'mirante_job_1_technologies',
+          atividadesDesenvolvidas: 'mirante_job_1_tasks'),
       TimeLine(
           date: '2017-2019',
           name: 'Singular',
           iconAsset: 'singular.png',
-          subtitle: 'singular_job_1_position'.tr(),
-          tecnologias: 'singular_job_1_technologies'.tr(),
-          atividadesDesenvolvidas: 'singular_job_1_tasks'.tr()),
+          subtitle: 'singular_job_1_position',
+          tecnologias: 'singular_job_1_technologies',
+          atividadesDesenvolvidas: 'singular_job_1_tasks'),
       TimeLine(
           date: '2019-2020',
           name: 'Mirante Tecnologia',
           iconAsset: 'mirante.png',
-          subtitle: 'mirante_job_2_position'.tr(),
-          feitosDestaque: 'mirante_job_2_emphasis'.tr(),
-          tecnologias: 'mirante_job_2_technologies'.tr(),
-          atividadesDesenvolvidas: 'mirante_job_2_tasks'.tr()),
+          subtitle: 'mirante_job_2_position',
+          feitosDestaque: 'mirante_job_2_emphasis',
+          tecnologias: 'mirante_job_2_technologies',
+          atividadesDesenvolvidas: 'mirante_job_2_tasks'),
       TimeLine(
           date: '2020-2020',
           name: 'Digital Innovation One',
           iconAsset: 'digital_innovation_one.png',
-          subtitle: 'dio_job_1_position'.tr(),
-          tecnologias: 'dio_job_1_technologies'.tr(),
-          atividadesDesenvolvidas: 'dio_job_1_tasks'.tr()),
+          subtitle: 'dio_job_1_position',
+          tecnologias: 'dio_job_1_technologies',
+          atividadesDesenvolvidas: 'dio_job_1_tasks'),
       TimeLine(
           date: '2020-2021',
-          name: 'igti_name'.tr(),
+          name: 'Instituto de Gestão e Tecnologia da Informação',
           iconAsset: 'igti.jpg',
-          subtitle: 'igti_course'.tr()),
+          subtitle: 'igti_course'),
       TimeLine(
           date: '2020-2021',
           name: 'Singular Studio',
           iconAsset: 'singular.png',
-          subtitle: 'singular_job_2_position'.tr(),
-          feitosDestaque: 'singular_job_2_emphasis'.tr(),
-          tecnologias: 'singular_job_2_technologies'.tr(),
-          atividadesDesenvolvidas: 'singular_job_2_tasks'.tr()),
+          subtitle: 'singular_job_2_position',
+          feitosDestaque: 'singular_job_2_emphasis',
+          tecnologias: 'singular_job_2_technologies',
+          atividadesDesenvolvidas: 'singular_job_2_tasks'),
       TimeLine(
           date: '2021',
           name: 'Aubay',
           iconAsset: 'aubay.png',
-          subtitle: 'aubay_job_1_position'.tr(),
-          feitosDestaque: 'aubay_job_1_emphasis'.tr(),
-          tecnologias: 'aubay_job_1_technologies'.tr(),
-          atividadesDesenvolvidas: 'aubay_job_1_tasks'.tr()),
+          subtitle: 'aubay_job_1_position',
+          feitosDestaque: 'aubay_job_1_emphasis',
+          tecnologias: 'aubay_job_1_technologies',
+          atividadesDesenvolvidas: 'aubay_job_1_tasks'),
     ];
   }
 }

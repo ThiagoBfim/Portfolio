@@ -35,15 +35,15 @@ class TimeLineDialog extends StatelessWidget {
             children: <Widget>[
               Text(timeline.name, style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 15),
-              _infoAtividade('activities'.tr(), context),
+              _infoAtividade('activities', context),
               _infoDetailAtividade(timeline.atividadesDesenvolvidas, context),
               SizedBox(height: 10),
-              _infoAtividade('technologies'.tr(), context),
+              _infoAtividade('technologies', context),
               _infoDetailAtividade(timeline.tecnologias, context),
               SizedBox(height: 10),
               Visibility(
                   visible: timeline.feitosDestaque != null,
-                  child: _infoAtividade('emphasis'.tr(), context)),
+                  child: _infoAtividade('emphasis', context)),
               _infoDetailAtividade(timeline.feitosDestaque, context),
               SizedBox(height: 10),
               _buildCloseButton(context),
@@ -109,14 +109,14 @@ class TimeLineDialog extends StatelessWidget {
           bottom: 15.0,
         ),
         child: Text(
-          detailAtividade ?? '',
+          detailAtividade?.tr() ?? '',
           style: Theme.of(context).textTheme.subtitle1,
         ));
   }
 
   Widget _infoAtividade(String title, BuildContext context) {
     return Text(
-      title,
+      title.tr(),
       style: Theme.of(context).textTheme.headline6,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/shared/constans.dart';
 import 'package:my_page/shared/screen_view.dart';
@@ -87,7 +88,7 @@ class _TimeLineCardState extends State<TimeLineCard>
                             : Theme.of(context).textTheme.headline5,
                       ),
                       Text(
-                        timeline.subtitle,
+                        timeline.subtitle.tr(),
                         style: isMobileView(context)
                             ? Theme.of(context).textTheme.subtitle2
                             : Theme.of(context).textTheme.headline6,
