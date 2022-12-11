@@ -47,8 +47,7 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.green,
         ),
         initial: initialTheme,
-        builder: (theme, darkTheme) =>
-            MaterialApp(
+        builder: (theme, darkTheme) => MaterialApp(
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               locale: context.locale,
@@ -72,29 +71,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AdaptiveTheme
-            .of(context)
-            .mode
-            .isDark
+        backgroundColor: AdaptiveTheme.of(context).mode.isDark
             ? Colors.blue.shade200
             : Colors.black87,
-        child: AdaptiveTheme
-            .of(context)
-            .mode
-            .isDark
+        child: AdaptiveTheme.of(context).mode.isDark
             ? Icon(
-          Icons.wb_sunny_sharp,
-          color: Colors.yellow,
-        )
+                Icons.wb_sunny_sharp,
+                color: Colors.yellow,
+              )
             : Icon(
-          Icons.nights_stay,
-          color: Colors.yellow,
-        ),
-        onPressed: () =>
-        {
-          AdaptiveTheme.of(context).toggleThemeMode(),
-          persistTheme(context)
-        },
+                Icons.nights_stay,
+                color: Colors.yellow,
+              ),
+        onPressed: () async => updateTheme(),
       ),
       body: Column(
         children: [
@@ -127,27 +116,36 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void updateTheme() async {
+    if (AdaptiveTheme.of(context).mode.isDark) {
+      AdaptiveTheme.of(context).setLight();
+    } else {
+      AdaptiveTheme.of(context).setDark();
+    }
+    await persistTheme(context);
+    setState(() {});
+  }
+
   Widget createTranslationButton(BuildContext context, Locale locale) {
-    return
-      MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: () async {
-            await context.setLocale(locale);
-            setState(() {});
-          },
-          child: Image(
-            image: AssetImage("assets/translations/${locale.countryCode}.png"),
-            width: 60,
-            height: 60,
-          ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () async {
+          await context.setLocale(locale);
+          setState(() {});
+        },
+        child: Image(
+          image: AssetImage("assets/translations/${locale.countryCode}.png"),
+          width: 60,
+          height: 60,
         ),
-      );
+      ),
+    );
   }
 
   persistTheme(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
-    AdaptiveTheme.of(context).persist();
+    await AdaptiveTheme.of(context).persist();
   }
 }

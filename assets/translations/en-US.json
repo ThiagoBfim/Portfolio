@@ -39,7 +39,7 @@
   "singular_job_2_technologies": "Flutter, Java 8, Hibernate, Wicket, Spring, Git e PostgreSQL.",
   "singular_job_2_tasks": "Creation, implementation, maintenance and deployment of a platform in code.",
   "aubay_job_1_position": "Software Engineer / DevOps",
-  "aubay_job_1_emphasis": "Pipeline improvement and support for CI/CD automation.\nEvolutions in application code decreasing application build time by 30%.\nInclusion of Sonar and support in creating the evolution of unit tests.",
+  "aubay_job_1_emphasis": "Pipeline improvement and support for CI/CD automation.\nEvolutions in application code, decreasing application build time by 30%.\nInclusion of Sonar and support in creating the evolution of unit tests.",
   "aubay_job_1_technologies": "Java 8/11, Spring Boot, SQL, SOAP, Jenkins, Git, Docker, Kubernetes, Helm, OpenShift",
-  "aubay_job_1_tasks": "• Responsible for the management and definition of the CI/CD pipeline;\n• Responsible for the Cloud Environment;\n• Train teams with best practices and code quality;\n• Create components and design code to improve teamwork;\n• Creation of microservices for integration with internal systems."
+  "aubay_job_1_tasks": "• Responsible for the management and definition of the CI/CD pipeline;\n• Responsible for the Cloud Environment;\n• Train teams with best practices and code quality;\n• Create components and design code to improve teamwork;\n• Creation of microservices for integration with internal systems\n• Mentorship and technical interviews."
 }
