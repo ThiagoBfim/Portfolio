@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_page/about/about_section.dart';
 import 'package:my_page/knowledge/knowledge_section.dart';
 import 'package:my_page/timeline/timeline_section.dart';
+import 'package:my_page/util/pdf-util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -106,6 +107,7 @@ class _HomePageState extends State<HomePage> {
                     AboutSection(),
                     KnowledgeSection(),
                     TimeLineSection(),
+                    PdfUtil(),
                   ],
                 ),
               ),

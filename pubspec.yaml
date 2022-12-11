@@ -24,13 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  pdf: ^3.8.4
   timelines: ^0.1.0
   url_launcher: ^6.1.5
   adaptive_theme: 3.1.1
   shared_preferences: ^2.0.15
   easy_localization: ^3.0.1
-
+  printing: ^5.9.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -53,7 +53,6 @@ flutter:
      - assets/about/
      - thiago-cv.pdf
      - assets/translations/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

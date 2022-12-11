@@ -36,7 +36,7 @@
   "igti_course": "MBA in Mobile Development",
   "singular_job_2_position": "Software Engineer",
   "singular_job_2_emphasis": "Integration of a tool for digital signature.\nLogin integration with GOV.BR via OAUTH2.\nInclusion of Flyway for script management.",
-  "singular_job_2_technologies": "Flutter, Java 8, Hibernate, Wicket, Spring, Git e PostgreSQL.",
+  "singular_job_2_technologies": "Java 8, Hibernate, Wicket, Spring, Git, HTML, CSS, JS, Dart, Flutter, Docker, PostgreSQL.",
   "singular_job_2_tasks": "Creation, implementation, maintenance and deployment of a platform in code.",
   "aubay_job_1_position": "Software Engineer / DevOps",
   "aubay_job_1_emphasis": "Pipeline improvement and support for CI/CD automation.\nEvolutions in application code, decreasing application build time by 30%.\nInclusion of Sonar and support in creating the evolution of unit tests.",
