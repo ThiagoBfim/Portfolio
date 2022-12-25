@@ -12,7 +12,6 @@ class PdfUtil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -22,8 +21,8 @@ class PdfUtil extends StatelessWidget {
               style: TextStyle(color: Colors.transparent),
             ),
             style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.resolveWith((states) => Colors.transparent)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.transparent)),
             onPressed: _createPDF,
           )
         ],
@@ -49,108 +48,194 @@ class PdfUtil extends StatelessWidget {
         pageFormat: PdfPageFormat.a4,
         theme: pw.ThemeData(
             defaultTextStyle: pw.TextStyle(fontSize: 10, letterSpacing: 0.2)),
-        margin: pw.EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+        margin: pw.EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
         build: (pw.Context context) {
           return pw.Column(children: [
-            pw.Center(
-              child:
-                  pw.Text("THIAGO BOMFIM", style: pw.TextStyle(fontSize: 22.0)),
-            ),
-            pw.SizedBox(height: 5),
-            pw.Center(
-              child: pw.Text("SOFTWARE ENGINEER",
-                  style: pw.TextStyle(fontSize: 10.0)),
-            ),
+            pw.Container(
+                padding:
+                    pw.EdgeInsets.only(left: 0, right: 0, top: 20, bottom: 10),
+                color: PdfColor.fromHex("#b8b4b4"),
+                child: pw.Column(children: [
+                  pw.Center(
+                    child: pw.Text("Thiago Bomfim",
+                        style: pw.TextStyle(fontSize: 22.0)),
+                  ),
+                  pw.SizedBox(height: 5),
+                  pw.Center(
+                    child: pw.Text("SOFTWARE ENGINEER",
+                        style: pw.TextStyle(fontSize: 10.0)),
+                  ),
+                  pw.Divider(
+                    thickness: 1,
+                    indent: 20,
+                    endIndent: 20,
+                    color: PdfColor.fromHex("#a3a3a3"),
+                  ),
+                  pw.Row(
+                      mainAxisAlignment: pw.MainAxisAlignment.center,
+                      children: [
+                        pw.Text("📩 thiago.bomfim.work@gmail.com",
+                            style: pw.TextStyle(
+                              fontWeight: pw.FontWeight.bold,
+                              fontFallback: [emoji],
+                            )),
+                        pw.SizedBox(width: 10),
+                        pw.Text("🏠 Lisbon/PT",
+                            style: pw.TextStyle(
+                              fontWeight: pw.FontWeight.bold,
+                              fontFallback: [emoji],
+                            )),
+                      ]),
+                ])),
             pw.SizedBox(height: 20),
             pw.Expanded(
-                child: pw.Row(
-                    crossAxisAlignment: pw.CrossAxisAlignment.stretch,
-                    mainAxisAlignment: pw.MainAxisAlignment.center,
-                    children: [
-                  createLeftColumn(emoji),
-                  pw.VerticalDivider(
-                    thickness: 1,
-                    indent: 0,
-                    endIndent: 20,
-                    color: PdfColor.fromHex("#000000"),
-                  ),
-                  createRightColumn(emoji, loop)
-                ]))
+                child: pw.Container(
+                    padding: pw.EdgeInsets.only(
+                        left: 40, right: 40, top: 0, bottom: 0),
+                    child: pw.Column(
+                        crossAxisAlignment: pw.CrossAxisAlignment.stretch,
+                        mainAxisAlignment: pw.MainAxisAlignment.center,
+                        children: [
+                          createProfileAndSkills(emoji, loop),
+                          createExperienceFirstPage(emoji, loop),
+                        ]))),
           ]);
         });
   }
 
-  pw.Widget createLeftColumn(pw.Font emoji) {
-    return pw.Container(
-        width: 150,
-        child: pw.Wrap(
-            direction: pw.Axis.vertical,
-            crossAxisAlignment: pw.WrapCrossAlignment.center,
-            spacing: 10,
-            runSpacing: 10,
-            children: [
-              pw.Text("° DETAILS ° ",
-                  style: pw.TextStyle(
-                    fontWeight: pw.FontWeight.bold,
-                    fontFallback: [emoji],
-                  )),
-              pw.Text("thiago.bomfim.work@gmail.com"),
-              pw.Text("Lisbon/PT"),
-              pw.SizedBox(height: 5),
-              pw.Text("° SKILLS ° ",
-                  style: pw.TextStyle(
-                    fontWeight: pw.FontWeight.bold,
-                    fontFallback: [emoji],
-                  )),
-              pw.Text("HTML & CSS"),
-              pw.Text("JavaScript"),
-              pw.Text("SQL"),
-              pw.Text("Java"),
-              pw.Text("Spring framework"),
-              pw.Text("SQL"),
-              pw.Text("Flutter"),
-              pw.Text("Git"),
-              pw.Text("Agile & Scrum"),
-              pw.Text("Docker"),
-              pw.Text("Kubernetes"),
-              pw.Text("Linux"),
-              pw.SizedBox(height: 5),
-              pw.Text("° LANGUAGES ° ",
-                  style: pw.TextStyle(
-                    fontWeight: pw.FontWeight.bold,
-                    fontFallback: [emoji],
-                  )),
-              pw.Text("Portuguese - C2"),
-              pw.Text("English - B2"),
-            ]));
+  pw.Page secondPage(pw.Font emoji, pw.Font loop) {
+    return pw.Page(
+        pageFormat: PdfPageFormat.a4,
+        theme: pw.ThemeData(
+            defaultTextStyle: pw.TextStyle(fontSize: 10, letterSpacing: 0.2)),
+        margin: pw.EdgeInsets.only(left: 40, right: 40, top: 30, bottom: 20),
+        build: (pw.Context context) {
+          return pw.Column(children: [
+            createRightColumnSecondPage(emoji, loop),
+          ]);
+        });
   }
 
-  pw.Expanded createRightColumn(pw.Font emoji, pw.Font loop) {
+  pw.Widget createEducationAndCertification(emoji, loop) {
+    return pw.Wrap(spacing: 7, direction: pw.Axis.vertical, children: [
+      _createHeader(emoji, "🎓 EDUCATION"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "Bachelor’s Degree in Information System, University Catolica of Brasilia, Brasilia",
+          "January 2014 - December 2017"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "MBA in Mobile Development,Institute of Management and Information Technology(IGTI)",
+          "July 2020 - July 2021"),
+      _createHeader(emoji, "📚 COURSES"),
+      createSmallInfo(
+          loop, emoji, "FullCycle Developer, Code.Education", "2021"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "Design Practices and Code Architecture for Java Applications, Caelum",
+          "2020"),
+      createSmallInfo(loop, emoji,
+          "Docker: Creating Containers without a headache, Alura", "2020"),
+      createSmallInfo(loop, emoji,
+          "Gitlab, Cl and Docker: Continuous Delivery Pipeline, Alura", "2020"),
+      createSmallInfo(loop, emoji,
+          "Kubernetes: Introduction to Container orchestration, Alura", "2020"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "Unit Tests and Widget with Mocks: good practices in Flutter, Alura",
+          "2020"),
+      createSmallInfo(loop, emoji,
+          "Solid with Java: guidance for objects with Java, Alura", "2020"),
+      _createHeader(emoji, "🏅 CERTIFICATIONS"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "Oracle Cloud Infrastructure Developer 2021 Associate (1Z0-1084-21)",
+          "2022"),
+      createSmallInfo(loop, emoji,
+          "Oracle Cloud Infrastructure Foundations (1Z0-1085-21)", "2021"),
+      createSmallInfo(
+          loop, emoji, "Scrum FoundationProfessional Certificate", "2020"),
+      createSmallInfo(
+          loop,
+          emoji,
+          "Oracle Certified Professional Java SE 8 Programmer II (1Z0-809) ",
+          "2018"),
+      createSmallInfo(loop, emoji,
+          "Oracle Certified Associate Java SE 8 Programmer (1Z0-808)", "2017"),
+    ]);
+  }
+
+  pw.Widget createProfileAndSkills(pw.Font emoji, pw.Font loop) {
+    return pw.Wrap(
+      spacing: 5,
+      runSpacing: 5,
+      children: [
+        _createHeader(emoji, "👤 PROFILE"),
+        pw.Text(
+            "Technology knowledge for me is a superpower, and I want to use this superpower to improve other's lives."),
+        pw.Text(
+            "I want to work with the mission of generating software that adds value to people, with best practices and good code quality."),
+        pw.SizedBox(height: 5),
+        _createHeader(emoji, "🛠 SKILLS"),
+        pw.SizedBox(height: 10),
+        createPill(85, "HTML & CSS"),
+        createPill(80, " JavaScript"),
+        createPill(40, " SQL"),
+        createPill(40, " Java"),
+        createPill(110, " Spring framework"),
+        createPill(40, " SQL"),
+        createPill(60, " Flutter"),
+        createPill(40, " Git"),
+        createPill(90, " Agile & Scrum"),
+        createPill(60, " Docker"),
+        createPill(80, " Kubernetes"),
+        createPill(60, " Linux"),
+        createPill(110, " Portuguese - Native"),
+        createPill(80, " English - B2"),
+      ],
+    );
+  }
+
+  pw.Container _createHeader(pw.Font emoji, String name) {
+    return pw.Container(
+        alignment: pw.Alignment.topLeft,
+        child: pw.Text(name,
+            style: pw.TextStyle(
+              fontSize: 12.0,
+              fontWeight: pw.FontWeight.bold,
+              fontFallback: [emoji],
+            )));
+  }
+
+  pw.Widget createExperienceFirstPage(pw.Font emoji, pw.Font loop) {
     return pw.Expanded(
-        child: pw.Wrap(spacing: 20, runSpacing: 10, children: [
-      pw.Container(
-          alignment: pw.Alignment.topLeft,
-          child: pw.Text("👤 PROFILE",
-              style: pw.TextStyle(
-                fontWeight: pw.FontWeight.bold,
-                fontFallback: [emoji],
-              ))),
-      pw.Text(
-          "Technology knowledge for me is a superpower, and I want to use this superpower to improve other's lives."),
-      pw.Text(
-          "I want to work with the mission of generating software that adds value to people, with best practices and good code quality."),
-      pw.Container(
-          alignment: pw.Alignment.topLeft,
-          child: pw.Text("💻 EXPERIENCE",
-              style: pw.TextStyle(
-                fontWeight: pw.FontWeight.bold,
-                fontFallback: [emoji],
-              ))),
-      pw.Column(
-          mainAxisAlignment: pw.MainAxisAlignment.start,
-          crossAxisAlignment: pw.CrossAxisAlignment.start,
-          children: buildExperienceHistory(loop))
-    ]));
+        child: pw.Column(
+      children: [
+        pw.SizedBox(height: 10),
+        _createHeader(emoji, "💻 EXPERIENCE"),
+        pw.SizedBox(height: 5),
+        pw.Column(
+            mainAxisAlignment: pw.MainAxisAlignment.start,
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: buildExperienceHistory(loop))
+      ],
+    ));
+  }
+
+  pw.Container createPill(double width, String name) {
+    return pw.Container(
+        alignment: pw.Alignment.center,
+        height: 25,
+        width: width,
+        decoration: pw.BoxDecoration(
+            color: PdfColor.fromHex("#ccdcff"),
+            borderRadius: pw.BorderRadius.circular(12)),
+        child: pw.Text(name));
   }
 
   List<pw.Widget> buildExperienceHistory(pw.Font loop) {
@@ -160,7 +245,6 @@ class PdfUtil extends StatelessWidget {
     _singularExperience(loop, history);
     _dioExperience(loop, history);
     _miranteExperience(loop, history);
-    _singular2Experience(loop, history);
     return history;
   }
 
@@ -279,7 +363,9 @@ class PdfUtil extends StatelessWidget {
               style: pw.TextStyle(fontFallback: [loop])),
           pw.Text("• Mentorship and technical interviews; ",
               style: pw.TextStyle(fontFallback: [loop])),
-          pw.Text("• Create components and design code to improve team work. ",
+          pw.Text("• Create components and design code to improve team work; ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Creation of microservices for integration with internal systems. ",
               style: pw.TextStyle(fontFallback: [loop])),
           pw.SizedBox(height: 5),
           pw.Text(
@@ -297,112 +383,16 @@ class PdfUtil extends StatelessWidget {
       ..click();
   }
 
-  secondPage(pw.Font emoji, pw.Font loop) {
-    return pw.Page(
-        pageFormat: PdfPageFormat.a4,
-        theme: pw.ThemeData(
-            defaultTextStyle: pw.TextStyle(fontSize: 10, letterSpacing: 0.2)),
-        margin: pw.EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-        build: (pw.Context context) {
-          return pw.Column(children: [
-            pw.Expanded(
-                child: pw.Row(
-                    crossAxisAlignment: pw.CrossAxisAlignment.stretch,
-                    mainAxisAlignment: pw.MainAxisAlignment.center,
-                    children: [
-                  pw.Container(width: 150),
-                  pw.VerticalDivider(
-                    thickness: 1,
-                    indent: 0,
-                    endIndent: 20,
-                    color: PdfColor.fromHex("#000000"),
-                  ),
-                  createRightColumnSecondPage(emoji, loop)
-                ]))
-          ]);
-        });
-  }
-
   createRightColumnSecondPage(pw.Font emoji, pw.Font loop) {
     return pw.Expanded(
         child: pw.Wrap(
-      spacing: 20,
-      runSpacing: 10,
+      spacing: 0,
       children: [
         pw.Column(
-            mainAxisAlignment: pw.MainAxisAlignment.start,
             crossAxisAlignment: pw.CrossAxisAlignment.start,
+            mainAxisAlignment: pw.MainAxisAlignment.start,
             children: buildExperienceHistorySecondPage(loop)),
-        pw.Container(
-            alignment: pw.Alignment.topLeft,
-            child: pw.Text("🎓 EDUCATION",
-                style: pw.TextStyle(
-                  fontWeight: pw.FontWeight.bold,
-                  fontFallback: [emoji],
-                ))),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Bachelor’s Degree in Information System, University Catolica of Brasilia, Brasilia",
-            "January 2014 - December 2017"),
-        createSmallInfo(
-            loop,
-            emoji,
-            "MBA in Mobile Development,Institute of Management and Information Technology(IGTI)",
-            "July 2020 - July 2021"),
-        pw.Container(
-            alignment: pw.Alignment.topLeft,
-            child: pw.Text("📚 COURSES",
-                style: pw.TextStyle(
-                  fontWeight: pw.FontWeight.bold,
-                  fontFallback: [emoji],
-                ))),
-        createSmallInfo(
-            loop, emoji, "FullCycle Developer, Code.Education", "2021"),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Design Practices and Code Architecture for Java Applications, Caelum",
-            "2020"),
-        createSmallInfo(loop, emoji,
-            "Docker: Creating Containers without a headache, Alura", "2020"),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Gitlab, Cl and Docker: Continuous Delivery Pipeline, Alura",
-            "2020"),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Kubernetes: Introduction to Container orchestration, Alura",
-            "2020"),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Unit Tests and Widget with Mocks: good practices in Flutter, Alura",
-            "2020"),
-        createSmallInfo(loop, emoji,
-            "Solid with Java: guidance for objects with Java, Alura", "2020"),
-        pw.Container(
-            alignment: pw.Alignment.topLeft,
-            child: pw.Text("🏅 CERTIFICATIONS",
-                style: pw.TextStyle(
-                  fontWeight: pw.FontWeight.bold,
-                  fontFallback: [emoji],
-                ))),
-        createSmallInfo(
-            loop,
-            emoji,
-            "Oracle Cloud Infrastructure Developer 2021 Associate (1Z0-1084-21)",
-            "2022"),
-        createSmallInfo(loop, emoji,
-            "Oracle Cloud Infrastructure Foundations (1Z0-1085-21)", "2021"),
-        createSmallInfo(
-            loop, emoji, "Scrum FoundationProfessional Certificate", "2020"),
-        createSmallInfo(loop, emoji,
-            "Oracle Certified Professional Java SE 8 Programmer II (1Z0-809) ", "2018"),
-        createSmallInfo(loop, emoji,
-            "Oracle Certified Associate Java SE 8 Programmer (1Z0-808)", "2017"),
+        createEducationAndCertification(emoji, loop)
       ],
     ));
   }
@@ -428,6 +418,7 @@ class PdfUtil extends StatelessWidget {
   List<pw.Widget> buildExperienceHistorySecondPage(pw.Font loop) {
     List<pw.Widget> history = [];
 
+    _singular2Experience(loop, history);
     _mirante2Experience(loop, history);
     return history;
   }
