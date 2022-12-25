@@ -122,13 +122,13 @@ class PdfUtil extends StatelessWidget {
       createSmallInfo(
           loop,
           emoji,
-          "Bachelor’s Degree in Information System, University Catolica of Brasilia, Brasilia",
-          "January 2014 - December 2017"),
+          "MBA in Mobile Development,Institute of Management and Information Technology(IGTI)",
+          "July 2020 - July 2021"),
       createSmallInfo(
           loop,
           emoji,
-          "MBA in Mobile Development,Institute of Management and Information Technology(IGTI)",
-          "July 2020 - July 2021"),
+          "Bachelor’s Degree in Information System, University Catolica of Brasilia, Brasilia",
+          "January 2014 - December 2017"),
       _createHeader(emoji, "📚 COURSES"),
       createSmallInfo(
           loop, emoji, "FullCycle Developer, Code.Education", "2021"),
