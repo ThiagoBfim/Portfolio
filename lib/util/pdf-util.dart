@@ -262,7 +262,7 @@ class PdfUtil extends StatelessWidget {
         mainAxisAlignment: pw.MainAxisAlignment.start,
         crossAxisAlignment: pw.CrossAxisAlignment.start,
         children: [
-          pw.Text("Senior Architecture at Aubay PT, Lisbon",
+          pw.Text("Senior Developer at Aubay PT, Lisbon",
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
