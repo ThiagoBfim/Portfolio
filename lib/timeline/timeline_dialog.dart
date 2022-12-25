@@ -27,7 +27,7 @@ class TimeLineDialog extends StatelessWidget {
       children: <Widget>[
         Container(
           width: 800,
-          padding: EdgeInsets.only(left: 15.0, right: 10.0, top: 40.0),
+          padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
           margin: EdgeInsets.only(top: 75.0),
           decoration: _dialogBorder(context),
           child: Column(
