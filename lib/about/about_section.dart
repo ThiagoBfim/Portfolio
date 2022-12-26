@@ -83,10 +83,13 @@ class AboutSection extends StatelessWidget {
                   onTap: () => _launchURL(social.url),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      'assets/about/${social.iconAsset}',
-                      height: 100,
-                      width: 100,
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Image.asset(
+                        'assets/about/${social.iconAsset}',
+                        height: 100,
+                        width: 100,
+                      ),
                     ),
                   ),
                 );
