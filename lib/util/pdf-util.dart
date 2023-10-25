@@ -263,10 +263,10 @@ class PdfUtil extends StatelessWidget {
                 color: PdfColor.fromHex("#878787"),
               )),
           pw.SizedBox(height: 5),
-          pw.Text("• Analysis and development of systems for Anvisa",
+          pw.Text("• Analysis and development of systems for Anvisa, creating the BE and also the FE application.",
               style: pw.TextStyle(fontFallback: [loop])),
           pw.Text(
-              "• Analysis and development of a Mobile application for INCRA and API Rest for communication;",
+              "• Analysis and development of a Mobile application for INCRA and the microservices for communication;",
               style: pw.TextStyle(fontFallback: [loop])),
           pw.Text(
               "• Responsible for the evolution and maintenance of one of Anvisa's main systems;",
@@ -366,11 +366,13 @@ class PdfUtil extends StatelessWidget {
               style: pw.TextStyle(fontFallback: [loop])),
           pw.Text("• Create components and design code to improve team work; ",
               style: pw.TextStyle(fontFallback: [loop])),
-          pw.Text("• Creation of microservices for integration with internal systems. ",
+          pw.Text("• Create microservices for integration with internal systems; ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Create a smart cache to decrease the latency and increase the availability. ",
               style: pw.TextStyle(fontFallback: [loop])),
           pw.SizedBox(height: 5),
           pw.Text(
-              "Technologies: Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Git, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk"),
+              "Technologies: Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Git, Kafka, MongoDb, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk"),
           pw.SizedBox(height: 10),
         ]);
     history.add(experience);

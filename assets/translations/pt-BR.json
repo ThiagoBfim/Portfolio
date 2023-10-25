@@ -40,6 +40,6 @@
   "singular_job_2_tasks": "Criação, implementação, manutenção e implantação de uma plataforma no code.",
   "aubay_job_1_position": "Engenheiro de Software / DevOps",
   "aubay_job_1_emphasis": "Melhoria na pipeline e apoio na automatização CI/CD. \nEvoluções no código da aplicação diminuindo em 30% o tempo de build da aplicação.\nInclusão do Sonar e apoio na criação de evolução dos testes unitários.",
-  "aubay_job_1_technologies": "Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Git, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk",
-  "aubay_job_1_tasks": "• Responsável pela gestão e definição do pipeline de CI/CD;\n• Responsável pelo Ambiente Cloud;\n• Treinar equipes com melhores práticas e qualidade de código;\n• Crie componentes e código de design para melhorar o trabalho em equipe;\n• Criação de microserviços para integração com sistemas internos\n• Mentoria e entrevistas técnicas."
+  "aubay_job_1_technologies": "Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Kafka, MongoDB, Git, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk",
+  "aubay_job_1_tasks": "• Responsável pela gestão e definição do pipeline de CI/CD;\n• Responsável pelo Ambiente Cloud;\n• Treinar equipes com melhores práticas e qualidade de código;\n• Crie componentes e código de design para melhorar o trabalho em equipe;\n• Criação de microserviços para integração com sistemas internos\n• Criação de uma smart cache para diminuir a latency e aumentar a disponibilidade\n• Mentoria e entrevistas técnicas."
 }
