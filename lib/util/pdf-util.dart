@@ -40,7 +40,7 @@ class PdfUtil extends StatelessWidget {
 
     final Uint8List bytes = await pdf.save();
 
-    await saveAndLaunchFile(bytes, 'CV.pdf');
+    await saveAndLaunchFile(bytes, 'thiago-cv.pdf');
   }
 
   pw.Page firstPage(pw.Font emoji, pw.Font loop) {
@@ -460,7 +460,7 @@ class PdfUtil extends StatelessWidget {
         mainAxisAlignment: pw.MainAxisAlignment.start,
         crossAxisAlignment: pw.CrossAxisAlignment.start,
         children: [
-          pw.Text("Software Engineer at Open Singular, Brasilia",
+          pw.Text("Software Engineer at OpenSingular(Mirante Spin-Off), Brasilia",
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
