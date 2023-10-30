@@ -310,7 +310,7 @@ class PdfUtil extends StatelessWidget {
         mainAxisAlignment: pw.MainAxisAlignment.start,
         crossAxisAlignment: pw.CrossAxisAlignment.start,
         children: [
-          pw.Text("Principal Developer at OpenSingular, Brasilia",
+          pw.Text("Principal Developer at OpenSingular (Mirante Spin-Off), Brasilia",
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
@@ -460,7 +460,7 @@ class PdfUtil extends StatelessWidget {
         mainAxisAlignment: pw.MainAxisAlignment.start,
         crossAxisAlignment: pw.CrossAxisAlignment.start,
         children: [
-          pw.Text("Software Engineer at OpenSingular(Mirante Spin-Off), Brasilia",
+          pw.Text("Software Engineer at OpenSingular (Mirante Spin-Off), Brasilia",
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
