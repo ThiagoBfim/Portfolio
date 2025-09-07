@@ -75,13 +75,21 @@ class TimeLineRepository {
           tecnologias: 'singular_job_2_technologies',
           atividadesDesenvolvidas: 'singular_job_2_tasks'),
       TimeLine(
-          date: '2021',
+          date: '2021-2024',
           name: 'Aubay',
           iconAsset: 'aubay.png',
           subtitle: 'aubay_job_1_position',
           feitosDestaque: 'aubay_job_1_emphasis',
           tecnologias: 'aubay_job_1_technologies',
           atividadesDesenvolvidas: 'aubay_job_1_tasks'),
+      TimeLine(
+          date: '2024',
+          name: 'Celfocus PT',
+          iconAsset: 'celfocus_logo.jpeg',
+          subtitle: 'celfocus_job_1_position',
+          feitosDestaque: 'celfocus_job_1_emphasis',
+          tecnologias: 'celfocus_job_1_technologies',
+          atividadesDesenvolvidas: 'celfocus_job_1_tasks'),
     ];
   }
 }

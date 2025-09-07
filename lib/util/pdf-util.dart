@@ -80,7 +80,7 @@ class PdfUtil extends StatelessWidget {
                               fontFallback: [emoji],
                             )),
                         pw.SizedBox(width: 10),
-                        pw.Text("🏠 Lisbon/PT",
+                        pw.Text("🏠 Brasilia/Brazil",
                             style: pw.TextStyle(
                               fontWeight: pw.FontWeight.bold,
                               fontFallback: [emoji],
@@ -137,20 +137,12 @@ class PdfUtil extends StatelessWidget {
           emoji,
           "Design Practices and Code Architecture for Java Applications, Caelum",
           "2020"),
-      createSmallInfo(loop, emoji,
-          "Docker: Creating Containers without a headache, Alura", "2020"),
-      createSmallInfo(loop, emoji,
-          "Gitlab, Cl and Docker: Continuous Delivery Pipeline, Alura", "2020"),
-      createSmallInfo(loop, emoji,
-          "Kubernetes: Introduction to Container orchestration, Alura", "2020"),
+      _createHeader(emoji, "🏅 CERTIFICATIONS"),
       createSmallInfo(
           loop,
           emoji,
-          "Unit Tests and Widget with Mocks: good practices in Flutter, Alura",
-          "2020"),
-      createSmallInfo(loop, emoji,
-          "Solid with Java: guidance for objects with Java, Alura", "2020"),
-      _createHeader(emoji, "🏅 CERTIFICATIONS"),
+          "Oracle Certified Professional: Java SE 21 Developer (1Z0-830)",
+          "2025"),
       createSmallInfo(
           loop,
           emoji,
@@ -177,9 +169,10 @@ class PdfUtil extends StatelessWidget {
       children: [
         _createHeader(emoji, "👤 PROFILE"),
         pw.Text(
-            "Technology knowledge for me is a superpower, and I want to use this superpower to improve other's lives."),
-        pw.Text(
-            "I want to work with the mission of generating software that adds value to people, with best practices and good code quality."),
+            "Hello! I'm Thiago Bomfim, a passionate Software Engineer with a decade-long journey in Java Web development. My career is fueled by a deep commitment to engineering excellence, combining clean code, best practices, and design patterns."),
+        pw.Text("I'm a book writer, Mastering RESTful Web Services with Java: Practical guide for building secure and scalable production-ready REST APIs - Packt"),
+        pw.Text("I'm a Podcast Host from Out of the Box Developer"),
+        pw.Text("I'm a Speaker, with some talks in Java User Groups(JUGs) and other events"),
         pw.SizedBox(height: 5),
         _createHeader(emoji, "🛠 SKILLS"),
         createPill(90, "Agile & Scrum"),
@@ -242,10 +235,10 @@ class PdfUtil extends StatelessWidget {
   List<pw.Widget> buildExperienceHistory(pw.Font loop) {
     List<pw.Widget> history = [];
 
+    _celfocusExperience(loop, history);
     _aubayExperience(loop, history);
     _singularExperience(loop, history);
-    _dioExperience(loop, history);
-    _miranteExperience(loop, history);
+
     return history;
   }
 
@@ -310,7 +303,7 @@ class PdfUtil extends StatelessWidget {
         mainAxisAlignment: pw.MainAxisAlignment.start,
         crossAxisAlignment: pw.CrossAxisAlignment.start,
         children: [
-          pw.Text("Principal Developer at OpenSingular (Mirante Spin-Off), Brasilia",
+          pw.Text("Senior Software Developer at OpenSingular (Mirante Spin-Off), Brasilia",
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
@@ -351,7 +344,7 @@ class PdfUtil extends StatelessWidget {
               style: pw.TextStyle(
                 fontWeight: pw.FontWeight.bold,
               )),
-          pw.Text("July 2021",
+          pw.Text("July 2021 - February 2024",
               style: pw.TextStyle(
                 color: PdfColor.fromHex("#878787"),
               )),
@@ -373,6 +366,40 @@ class PdfUtil extends StatelessWidget {
           pw.SizedBox(height: 5),
           pw.Text(
               "Technologies: Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Git, Kafka, MongoDb, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk"),
+          pw.SizedBox(height: 10),
+        ]);
+    history.add(experience);
+  }
+
+  void _celfocusExperience(pw.Font loop, List<pw.Widget> history) {
+    var experience = pw.Column(
+        mainAxisAlignment: pw.MainAxisAlignment.start,
+        crossAxisAlignment: pw.CrossAxisAlignment.start,
+        children: [
+          pw.Text("Staff Engineer at Celfocus PT, Lisbon",
+              style: pw.TextStyle(
+                fontWeight: pw.FontWeight.bold,
+              )),
+          pw.Text("February 2024",
+              style: pw.TextStyle(
+                color: PdfColor.fromHex("#878787"),
+              )),
+          pw.SizedBox(height: 5),
+          pw.Text("• Contributed to the development and maintenance of one of Vodafone PT’s main internal applications;",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Designed and built multiple microservices, ensuring scalability and reliability;",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Defined guidelines and best practices for microservices design and architecture; ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Produced documentation to guide the team and ensure consistency across services; ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Led the development of a Data Distribution Service (DDS) solution that reduced system response time by 70% ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.Text("• Created documentation and Architecture Decision Records (ADRs) to support clarity and long-term maintainability. ",
+              style: pw.TextStyle(fontFallback: [loop])),
+          pw.SizedBox(height: 5),
+          pw.Text(
+              "Technologies: Java, Spring Boot, Kafka, MongoDB, Jenkins, Git, Docker, Kubernetes, Helm, Splunk, Datadog"),
           pw.SizedBox(height: 10),
         ]);
     history.add(experience);
@@ -420,7 +447,8 @@ class PdfUtil extends StatelessWidget {
 
   List<pw.Widget> buildExperienceHistorySecondPage(pw.Font loop) {
     List<pw.Widget> history = [];
-
+    _dioExperience(loop, history);
+    _miranteExperience(loop, history);
     _singular2Experience(loop, history);
     _mirante2Experience(loop, history);
     return history;

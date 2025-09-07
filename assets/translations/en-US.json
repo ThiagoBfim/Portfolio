@@ -41,5 +41,9 @@
   "aubay_job_1_position": "Software Engineer / DevOps",
   "aubay_job_1_emphasis": "Pipeline improvement and support for CI/CD automation.\nEvolutions in application code, decreasing application build time by 30%.\nInclusion of Sonar and support in creating the evolution of unit tests.",
   "aubay_job_1_technologies": "Java 8/11/17, Spring Boot, SQL, SOAP, Jenkins, Git, Kafka, MongoDB, Docker, Kubernetes, Helm, OpenShift, ElasticSearch, Splunk",
-  "aubay_job_1_tasks": "• Responsible for the management and definition of the CI/CD pipeline;\n• Responsible for the Cloud Environment;\n• Train teams with best practices and code quality;\n• Create components and design code to improve teamwork;\n• Create microservices for integration with internal systems\n• Create a smart cache to decrease the latency and increase the availability\n• Mentorship and technical interviews."
+  "aubay_job_1_tasks": "• Responsible for the management and definition of the CI/CD pipeline;\n• Responsible for the Cloud Environment;\n• Train teams with best practices and code quality;\n• Create components and design code to improve teamwork;\n• Create microservices for integration with internal systems\n• Create a smart cache to decrease the latency and increase the availability\n• Mentorship and technical interviews.",
+  "celfocus_job_1_position": "Specialist Software Engineer",
+  "celfocus_job_1_emphasis": "Led the development of a DDS solution that reduced system response time by 70%.\nCreated documentation and Architecture Decision Records (ADRs) to support clarity and long-term maintainability",
+  "celfocus_job_1_technologies": "Java, Spring Boot, Kafka, MongoDB, Jenkins, Git, Docker, Kubernetes, Helm, Splunk, Datadog",
+  "celfocus_job_1_tasks": "• Contributed to the development and maintenance of one of Vodafone PT’s main internal applications\n• Designed and built multiple microservices, ensuring scalability and reliability\n• Defined guidelines and best practices for microservices design and architecture\n• Produced documentation to guide the team and ensure consistency across services"
 }
